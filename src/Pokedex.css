@@ -1,12 +1,35 @@
 .Pokedex {
+  margin: 1rem auto;
+  padding: 1rem;
+
+  border-radius: 2rem;
+  max-width: 90vw;
+}
+
+.Pokedex-totalExp {
+  color: #222;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.Pokedex-grid {
   display: grid;
   grid-template-columns: repeat(4, max-content);
   justify-content: center;
   justify-items: center;
+}
 
-  margin: 0 auto;
+.Pokedex-winner,
+.Pokedex-loser {
+  margin: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
 
-  background: hsl(200, 100%, 50%);
-  border-radius: 2rem;
-  max-width: 100vw;
+.Pokedex-winner {
+  color: hsl(150, 50%, 40%)
+}
+
+.Pokedex-loser {
+  color: hsl(0, 100%, 40%)
 }
