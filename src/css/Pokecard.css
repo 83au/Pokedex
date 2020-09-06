@@ -1,0 +1,59 @@
+@keyframes slideIn {
+  from {
+    transform: skewX(-15deg) translate(100rem, -500rem);
+  }
+  to {
+    transform: skewX(-15deg) translate(0, 0);
+  }
+}
+
+.Pokecard {
+  margin: 2rem;
+
+  background: white;
+  width: 20rem;
+  transform: skewX(-15deg) translate(0, 0);
+
+  text-align: center;
+  font-size: 1.5rem;
+  animation: slideIn .5s both;
+}
+
+.Pokecard:nth-child(2) {
+  animation-delay: .1s;
+}
+
+.Pokecard:nth-child(3) {
+  animation-delay: .2s;
+}
+
+.Pokecard:nth-child(4) {
+  animation-delay: .3s;
+}
+
+.Pokecard-name {
+  margin: 1rem;
+  transform: skewX(15deg);
+}
+
+.Pokecard img {
+  width: 80%;
+  transform: skewX(15deg) scale(1);
+  filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, .8));
+  transition: .3s;
+}
+
+.Pokecard:hover img {
+  transform: skewX(15deg) scale(1.1);
+  filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, .8));
+}
+
+.Pokecard-stats {
+  padding: 1rem;
+  background: linear-gradient(to bottom right, hsl(180, 80%, 50%), hsl(180, 80%, 40%));
+  color: white;
+}
+
+.Pokecard-stats * {
+  transform: skewX(15deg);
+}

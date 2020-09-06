@@ -17,9 +17,9 @@ class Pokegame extends Component {
 
   render() {
     const { pokemon } = this.props;
-    const PokemonList = pokemon.sort(() => Math.random() - .5);
-    const handOne = PokemonList.slice(0, 4);
-    const handTwo = PokemonList.slice(4);
+    const pokemonList = pokemon.sort(() => Math.random() - .5);
+    const handOne = pokemonList.slice(0, 4);
+    const handTwo = pokemonList.slice(4);
 
     const handOneTotalExp = handOne.reduce((a, c) => a + c.base_experience, 0);
     const handTwoTotalExp = handTwo.reduce((a, c) => a + c.base_experience, 0);

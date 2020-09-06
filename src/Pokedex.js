@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Pokecard from './Pokecard';
-import './Pokedex.css';
+import './css/Pokedex.css';
 
 class Pokedex extends Component {
   render() {
@@ -20,8 +20,8 @@ class Pokedex extends Component {
           })}
         </div>
         {
-            this.props.isWinner ? <h2 className="Pokedex-winner">THIS HAND WINS!</h2> :
-            <h2 className="Pokedex-loser">THIS HAND LOSES!</h2>
+          this.props.isWinner ? <h2 className="Pokedex-winner">THIS HAND WINS!</h2> :
+          <h2 className="Pokedex-loser">THIS HAND LOSES!</h2>
         }
       </div>
     );
