@@ -16,26 +16,25 @@ class Pokegame extends Component {
   }
 
   render() {
-    const { pokemon } = this.props;
-    const pokemonList = pokemon.sort(() => Math.random() - .5);
-    const handOne = pokemonList.slice(0, 4);
-    const handTwo = pokemonList.slice(4);
+    const pokemon  = [...this.props.pokemon].sort(() => Math.random() - .5);
+    const hand1 = pokemon.slice(0, 4);
+    const hand2 = pokemon.slice(4);
 
-    const handOneTotalExp = handOne.reduce((a, c) => a + c.base_experience, 0);
-    const handTwoTotalExp = handTwo.reduce((a, c) => a + c.base_experience, 0);
-    const handOneWins = handOneTotalExp > handTwoTotalExp;
+    const hand1TotalExp = hand1.reduce((a, c) => a + c.base_experience, 0);
+    const hand2TotalExp = hand2.reduce((a, c) => a + c.base_experience, 0);
+    const hand1Wins = hand1TotalExp > hand2TotalExp;
 
     return (
       <div className="Pokegame">
         <Pokedex 
-          pokemon={handOne} 
-          totalExp={handOneTotalExp}
-          isWinner={handOneWins}
+          pokemon={hand1} 
+          totalExp={hand1TotalExp}
+          isWinner={hand1Wins}
         />
         <Pokedex 
-          pokemon={handTwo} 
-          totalExp={handTwoTotalExp}
-          isWinner={!handOneWins}
+          pokemon={hand2} 
+          totalExp={hand2TotalExp}
+          isWinner={!hand1Wins}
         />
       </div>
     )
