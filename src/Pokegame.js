@@ -20,21 +20,20 @@ class Pokegame extends Component {
     const hand1 = pokemon.slice(0, 4);
     const hand2 = pokemon.slice(4);
 
-    const hand1TotalExp = hand1.reduce((a, c) => a + c.base_experience, 0);
-    const hand2TotalExp = hand2.reduce((a, c) => a + c.base_experience, 0);
-    const hand1Wins = hand1TotalExp > hand2TotalExp;
+    const hand1Exp = hand1.reduce((a, c) => a + c.base_experience, 0);
+    const hand2Exp = hand2.reduce((a, c) => a + c.base_experience, 0);
 
     return (
       <div className="Pokegame">
         <Pokedex 
           pokemon={hand1} 
-          totalExp={hand1TotalExp}
-          isWinner={hand1Wins}
+          totalExp={hand1Exp}
+          isWinner={hand1Exp > hand2Exp}
         />
         <Pokedex 
           pokemon={hand2} 
-          totalExp={hand2TotalExp}
-          isWinner={!hand1Wins}
+          totalExp={hand2Exp}
+          isWinner={hand2Exp > hand1Exp}
         />
       </div>
     )
